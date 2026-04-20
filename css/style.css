@@ -6,7 +6,7 @@ body {
   background: #f0f4f3;
   color: #1a1a1a;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* ─── Index Page ────────────────────────────────────────── */
@@ -65,14 +65,14 @@ body {
 
 .student-btn .emoji { font-size: 1.8rem; display: block; margin-bottom: .3rem; }
 
-/* ─── Exam Page ─────────────────────────────────────────── */
+/* ─── Exam Page Layout ──────────────────────────────────── */
 .exam-wrapper {
   max-width: 860px;
   margin: 0 auto;
   padding: 1.5rem 1rem 3rem;
 }
 
-/* Sticky toolbar (screen only) */
+/* Sticky toolbar */
 .toolbar {
   position: sticky;
   top: 0;
@@ -88,11 +88,7 @@ body {
   box-shadow: 0 3px 12px rgba(0,0,0,.2);
 }
 
-.toolbar .back-link {
-  color: rgba(255,255,255,.8);
-  text-decoration: none;
-  font-size: .9rem;
-}
+.toolbar .back-link { color: rgba(255,255,255,.8); text-decoration: none; font-size: .9rem; }
 .toolbar .back-link:hover { color: #fff; }
 
 #timer {
@@ -103,7 +99,7 @@ body {
 }
 
 #timer.warning { color: #ff6b6b; animation: pulse 1s infinite; }
-@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:.5; } }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.5} }
 
 .print-btn {
   background: #fff;
@@ -134,8 +130,6 @@ body {
 .exam-header .level { font-size: .95rem; opacity: .85; }
 
 .exam-meta { display: flex; flex-direction: column; gap: .4rem; font-size: .9rem; }
-.exam-meta span { white-space: nowrap; }
-.meta-row { display: flex; gap: 1.5rem; align-items: center; }
 
 .student-name-display {
   font-size: 1.6rem;
@@ -143,6 +137,7 @@ body {
   background: rgba(255,255,255,.2);
   padding: .3rem .8rem;
   border-radius: 8px;
+  text-align: center;
 }
 
 .score-box {
@@ -151,11 +146,10 @@ body {
   border: 2px dashed rgba(255,255,255,.5);
   padding: .3rem .8rem;
   border-radius: 8px;
-  min-width: 110px;
   text-align: center;
 }
 
-/* Teacher note banner */
+/* Teacher note */
 .teacher-note {
   background: #fff3cd;
   border-left: 5px solid #e67e22;
@@ -198,101 +192,181 @@ body {
 .section-header .pts { margin-left: auto; font-size: .85rem; color: #888; white-space: nowrap; }
 
 /* Exercise blocks */
-.exercise { margin-bottom: 1.6rem; }
+.exercise { margin-bottom: 1.8rem; }
 .exercise:last-child { margin-bottom: 0; }
 
-.exercise h3 {
-  font-size: .95rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: .3rem;
-}
+.exercise h3 { font-size: .98rem; font-weight: 700; color: #222; margin-bottom: .25rem; }
+.exercise h3 small { font-size: .82rem; color: #999; margin-left: .3rem; }
 
-.exercise .instruction {
-  font-style: italic;
-  color: #555;
-  font-size: .88rem;
-  margin-bottom: .8rem;
-}
+.instruction { font-style: italic; color: #555; font-size: .88rem; margin-bottom: .8rem; }
+.hint { color: #999; font-size: .85rem; }
 
-.exercise ol { padding-left: 1.3rem; }
-.exercise ol li { margin-bottom: .55rem; line-height: 1.8; }
-.exercise ul { padding-left: 1.3rem; }
-.exercise ul li { margin-bottom: .4rem; }
+.exercise ol { padding-left: 1.4rem; }
+.exercise ol li { margin-bottom: .65rem; line-height: 2; }
 
-/* Answer blanks */
-.blank {
-  display: inline-block;
+.sub-label { font-weight: 700; font-size: .92rem; margin: 1rem 0 .3rem; color: #1b6b5a; }
+.sub-label small { font-weight: 400; color: #999; }
+
+/* ─── Interactive Inputs ─────────────────────────────────── */
+.blank-input {
+  border: none;
   border-bottom: 2px solid #1b6b5a;
-  min-width: 110px;
-  height: 1.4em;
-  vertical-align: bottom;
-  margin: 0 3px;
+  outline: none;
+  width: 130px;
+  padding: 0 4px 1px;
+  font-size: .95rem;
+  font-family: inherit;
+  color: #1a1a1a;
   background: transparent;
+  vertical-align: baseline;
+  transition: border-color .2s;
 }
 
-/* Circle choices */
-.choices {
-  display: inline-flex;
-  gap: .4rem;
-  flex-wrap: wrap;
-}
-.choice {
-  border: 2px solid #2e7d6e;
-  border-radius: 20px;
-  padding: .1rem .55rem;
-  font-size: .9rem;
-  cursor: default;
-}
+.blank-input:focus { border-bottom-color: #e67e22; background: #fffbf5; border-radius: 2px 2px 0 0; }
+.blank-input::placeholder { color: #ccc; }
 
-/* Sub-exercise label */
-.sub-label {
+.blank-input.blank-short { width: 70px; }
+.blank-input.blank-wide  { width: 160px; }
+
+/* number input for listening 2 */
+.num-input {
+  width: 54px;
+  height: 44px;
+  border: 2px solid #1b6b5a;
+  border-radius: 8px;
+  font-size: 1.3rem;
   font-weight: 700;
-  font-size: .9rem;
-  margin: .8rem 0 .35rem;
+  text-align: center;
+  color: #1b6b5a;
+  outline: none;
+  background: #f6fffe;
+  transition: border-color .2s, background .2s;
+}
+.num-input:focus { border-color: #e67e22; background: #fffbf5; }
+
+/* ─── Click-to-Circle words (Exercise 4) ─────────────────── */
+.cw {
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 1px 5px;
+  border: 2px solid transparent;
+  transition: border-color .15s, background .15s;
+  display: inline-block;
+  user-select: none;
+}
+
+.cw:hover { background: #e8f5f2; border-color: #2e7d6e; }
+
+.cw.circled {
+  border-color: #1b6b5a;
+  background: #e8f5f2;
+  font-weight: 700;
   color: #1b6b5a;
 }
 
-/* Tick table for listening */
-.tick-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: .9rem;
-  margin-top: .5rem;
-}
-.tick-table th, .tick-table td {
-  border: 1.5px solid #ccc;
-  padding: .45rem .7rem;
-  text-align: center;
-}
-.tick-table th { background: #e8f5f2; font-weight: 700; }
-.tick-table .tick-cell { width: 60px; }
+/* ─── Click-to-Select word choices (Exercise 5c) ─────────── */
+.choice-list { padding-left: 1.4rem; }
+.choice-list li { margin-bottom: .8rem; line-height: 2; }
 
-/* Number boxes for listening 2 */
-.number-boxes {
-  display: flex;
-  gap: .8rem;
-  flex-wrap: wrap;
-  margin-top: .5rem;
-}
-.number-box {
+.choice-group { display: inline-flex; gap: .4rem; margin-right: .3rem; }
+
+.choice-word {
+  cursor: pointer;
   border: 2px solid #2e7d6e;
-  border-radius: 8px;
-  padding: .4rem .8rem;
-  font-size: .9rem;
-  min-width: 90px;
-  text-align: center;
-}
-.number-box .num-blank {
-  display: block;
-  width: 32px;
-  height: 32px;
-  border: 1.5px solid #333;
-  margin: .3rem auto 0;
-  border-radius: 4px;
+  border-radius: 20px;
+  padding: 1px 10px;
+  font-size: .93rem;
+  user-select: none;
+  transition: background .15s, color .15s, border-color .15s;
+  display: inline-block;
 }
 
-/* Listening / Reading images */
+.choice-word:hover { background: #e8f5f2; }
+
+.choice-word.selected {
+  background: #1b6b5a;
+  color: #fff;
+  border-color: #1b6b5a;
+  font-weight: 700;
+}
+
+/* ─── Listening tick grid ────────────────────────────────── */
+.listen-tick-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: .8rem;
+}
+
+.tick-day {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  background: #f6fffe;
+  border: 1.5px solid #c5e8e0;
+  border-radius: 10px;
+  padding: .5rem 1rem;
+  flex: 1 1 160px;
+}
+
+.day-label { font-weight: 700; font-size: .88rem; color: #1b6b5a; min-width: 80px; }
+
+.tick-opt {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  cursor: pointer;
+  font-size: .95rem;
+  font-weight: 600;
+  user-select: none;
+}
+
+.tick-opt input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #1b6b5a;
+  cursor: pointer;
+}
+
+/* ─── Listening number grid ──────────────────────────────── */
+.listen-number-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: .8rem;
+}
+
+.num-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+  background: #f6fffe;
+  border: 1.5px solid #c5e8e0;
+  border-radius: 10px;
+  padding: .7rem 1.1rem;
+  flex: 1 1 100px;
+}
+
+.activity-label { font-size: .85rem; font-weight: 700; color: #1b6b5a; text-align: center; }
+
+/* ─── Reading questions ──────────────────────────────────── */
+.reading-questions { padding-left: 1.4rem; }
+
+.reading-questions li {
+  margin-bottom: 1.1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  column-gap: 1rem;
+  row-gap: .2rem;
+}
+
+.q-text { font-weight: 600; grid-column: 1; grid-row: 1; color: #333; }
+.q-answer { grid-column: 1; grid-row: 2; line-height: 2.2; }
+.pts-label { grid-column: 2; grid-row: 1 / 3; align-self: center; color: #aaa; font-size: .8rem; white-space: nowrap; }
+
+/* ─── Listening/Reading images ───────────────────────────── */
 .exercise-img {
   width: 100%;
   max-width: 720px;
@@ -302,53 +376,62 @@ body {
   margin: .8rem auto;
 }
 
-/* Reading answer lines */
-.reading-questions { margin-top: 1rem; }
-.reading-questions li { margin-bottom: 1rem; }
-
 /* ─── Print ──────────────────────────────────────────────── */
 @media print {
-  body { background: #fff; font-size: 12pt; }
+  body { background: #fff; font-size: 11pt; line-height: 1.6; }
 
-  .toolbar { display: none !important; }
-  .teacher-note { display: none !important; }
+  .toolbar, .teacher-note { display: none !important; }
 
   .exam-wrapper { max-width: 100%; padding: 0; }
 
   .exam-header {
-    background: #1b6b5a !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
     border-radius: 0;
     margin-bottom: 1rem;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   .section {
     box-shadow: none;
-    border: 1.5px solid #ccc;
-    border-radius: 0;
-    break-inside: avoid;
+    border: 1.5px solid #bbb;
+    border-radius: 6px;
     margin-bottom: 1rem;
+    break-inside: avoid;
+    padding: 1rem 1.2rem;
   }
 
   .section-badge {
-    background: #1b6b5a !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
-  .exercise-img { max-width: 100%; }
+  .section-listening, .section-reading { break-before: page; }
 
-  .blank {
+  /* Inputs look like underlines */
+  .blank-input {
+    border: none;
     border-bottom: 1.5px solid #000;
-    min-width: 100px;
+    width: 120px;
+    background: transparent !important;
   }
+  .blank-input.blank-short { width: 65px; }
+  .blank-input.blank-wide  { width: 150px; }
 
-  .choice { border-color: #000; }
+  /* Circled words stay circled */
+  .cw { border: 1.5px solid transparent; padding: 1px 5px; }
+  .cw.circled { border-color: #000 !important; background: transparent !important; font-weight: 700; color: #000 !important; }
 
-  .section-header { border-bottom-color: #999; }
+  /* Selected choices stay highlighted */
+  .choice-word { border: 1.5px solid #555; }
+  .choice-word.selected { border: 2px solid #000 !important; font-weight: 700; background: transparent !important; color: #000 !important; }
 
-  /* Force section B and C to start on new pages */
-  .section-listening { break-before: page; }
-  .section-reading { break-before: page; }
+  /* Listening tick */
+  .tick-day { border: 1px solid #999; background: transparent; }
+  .listen-number-grid { gap: .6rem; }
+  .num-item { border: 1px solid #999; background: transparent; }
+  .num-input { border: 1.5px solid #000; background: transparent; font-size: 1rem; }
+
+  .exercise-img { max-width: 100%; border: 1px solid #ccc; }
+
+  .reading-questions li { margin-bottom: 1.4rem; }
 }
