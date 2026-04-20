@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Answer Key — Mock Exam</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Answer-key overrides */
+    body { background: #fdf6f0; }
+
+    .answer-banner {
+      background: #c0392b;
+      color: #fff;
+      text-align: center;
+      padding: .55rem 1rem;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .exam-header { background: #7b2d2d; }
+
+    .section-badge { background: #c0392b; }
+
+    /* Pre-filled answers shown in red ink */
+    .ans {
+      color: #c0392b;
+      font-weight: 700;
+      border-bottom: 2px solid #c0392b;
+      min-width: 90px;
+      display: inline-block;
+      padding: 0 4px;
+      font-style: italic;
+    }
+    .ans.short { min-width: 55px; }
+    .ans.wide  { min-width: 150px; }
+
+    /* Circled adjectives – pre-circled in red */
+    .cw-ans {
+      border: 2px solid #c0392b;
+      border-radius: 20px;
+      padding: 1px 6px;
+      color: #c0392b;
+      font-weight: 700;
+    }
+
+    /* Selected word choices */
+    .choice-ans {
+      border: 2px solid #999;
+      border-radius: 20px;
+      padding: 1px 10px;
+      font-size: .93rem;
+      display: inline-block;
+      margin-right: .3rem;
+    }
+    .choice-ans.selected {
+      background: #c0392b;
+      color: #fff;
+      border-color: #c0392b;
+      font-weight: 700;
+    }
+
+    /* Listening tick – shown as selected radio rows */
+    .tick-day-ans {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      background: #fff5f5;
+      border: 1.5px solid #e5b8b8;
+      border-radius: 10px;
+      padding: .5rem 1rem;
+      flex: 1 1 160px;
+    }
+    .tick-opt-ans {
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+      font-size: .95rem;
+      font-weight: 600;
+    }
+    .tick-opt-ans.correct {
+      color: #c0392b;
+      font-weight: 800;
+    }
+    .tick-opt-ans.correct::before {
+      content: "✓ ";
+    }
+
+    /* Number answers */
+    .num-ans {
+      width: 54px;
+      height: 44px;
+      border: 2px solid #c0392b;
+      border-radius: 8px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-align: center;
+      color: #c0392b;
+      background: #fff5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Reading answers */
+    .q-answer .ans { min-width: 80px; }
+
+    @media print {
+      body { background: #fff; }
+      .answer-banner {
+        background: #c0392b !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .exam-header {
+        background: #7b2d2d !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .section-badge {
+        background: #c0392b !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .ans { color: #c0392b !important; border-bottom-color: #c0392b !important; }
+      .cw-ans { border-color: #c0392b !important; color: #c0392b !important; }
+      .choice-ans.selected { background: #c0392b !important; color: #fff !important; }
+      .num-ans { color: #c0392b !important; border-color: #c0392b !important; }
+      .tick-opt-ans.correct { color: #c0392b !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="answer-banner">📋 Answer Key — Teacher's Copy</div>
+
+  <!-- Toolbar -->
+  <div class="toolbar" style="background:#7b2d2d;">
+    <a href="index.html" class="back-link">← Back</a>
+    <span style="font-weight:700;letter-spacing:1px;">ANSWER KEY</span>
+    <button onclick="window.print()" class="print-btn">🖨 Print</button>
+  </div>
+
+  <div class="exam-wrapper">
+
+    <div class="exam-header">
+      <div>
+        <h1>Family and Friends 2 — Mock Examination</h1>
+        <p class="level">Oxford University Press · Level 2 · Units 1–13 — <strong>ANSWER KEY</strong></p>
+      </div>
+      <div class="exam-meta">
+        <span class="student-name-display">Answer Key</span>
+        <span>Date: Friday, 25 April 2025</span>
+        <span class="score-box">Score: 100 / 100</span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         SECTION A — GRAMMAR
+    ══════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-badge">Section A</span>
+        <h2>Grammar</h2>
+        <span class="pts">50 points</span>
+      </div>
+
+      <!-- Exercise 1 – Present Simple -->
+      <div class="exercise">
+        <h3>Exercise 1 — Present Simple <small>(10 pts)</small></h3>
+        <p class="instruction">Complete the sentences with the correct form of the verb in brackets.</p>
+        <ol>
+          <li>He <span class="ans">gets up</span> (get up) at six o'clock.</li>
+          <li>She <span class="ans">goes</span> (go) to school at eight o'clock.</li>
+          <li>He <span class="ans">doesn't like</span> (not like) snakes.</li>
+          <li><span class="ans short">Does</span> she work in a hospital? <span class="hint">(do / does)</span></li>
+          <li>She <span class="ans">has</span> (have) breakfast at seven o'clock.</li>
+          <li>Where <span class="ans short">does</span> he <span class="ans">work</span>? <span class="hint">(work)</span></li>
+          <li>My dad <span class="ans">works</span> (work) at night.</li>
+          <li>He <span class="ans">doesn't have</span> (not have) dinner in the morning.</li>
+          <li>She <span class="ans">goes</span> (go) to bed at nine o'clock.</li>
+          <li><span class="ans short">Does</span> your mum <span class="ans">start</span> work at six o'clock? <span class="hint">(start)</span></li>
+        </ol>
+      </div>
+
+      <!-- Exercise 2 – Present Continuous -->
+      <div class="exercise">
+        <h3>Exercise 2 — Present Continuous <small>(10 pts)</small></h3>
+        <p class="instruction">Write the correct present continuous form of the verb in brackets.</p>
+        <ol>
+          <li>She <span class="ans">is wearing</span> (wear) a blue skirt.</li>
+          <li>They <span class="ans">are watching</span> (watch) a video.</li>
+          <li>He <span class="ans">is eating</span> (eat) the wedding cake.</li>
+          <li>What <span class="ans short">are</span> you <span class="ans">doing</span>? <span class="hint">(do)</span> &nbsp; I <span class="ans">am dancing</span> with my friends. <span class="hint">(dance)</span></li>
+          <li>She <span class="ans">isn't sleeping</span> (not sleep). She <span class="ans">is talking</span> (talk) to her friends.</li>
+          <li>Look at Grandma. What <span class="ans short">is</span> she <span class="ans">doing</span>? <span class="hint">(do)</span></li>
+          <li>We <span class="ans">are cooking</span> (cook) and <span class="ans">cleaning</span> (clean) the flat together.</li>
+          <li>The band <span class="ans">is playing</span> (play) music.</li>
+          <li>They <span class="ans">are choosing</span> (choose) party dresses.</li>
+          <li>I <span class="ans">am taking</span> (take) photos of the party.</li>
+        </ol>
+      </div>
+
+      <!-- Exercise 3 – Comparatives -->
+      <div class="exercise">
+        <h3>Exercise 3 — Comparatives <small>(10 pts)</small></h3>
+        <p class="instruction">Complete the sentences using: <strong>bigger than &nbsp;·&nbsp; smaller than &nbsp;·&nbsp; taller than &nbsp;·&nbsp; shorter than</strong></p>
+        <ol>
+          <li>The horse is <span class="ans wide">bigger than</span> the goat.</li>
+          <li>The girl is <span class="ans wide">taller than</span> the boy.</li>
+          <li>The boy is <span class="ans wide">shorter than</span> the girl.</li>
+          <li>The sheep is <span class="ans wide">smaller than</span> the cow.</li>
+          <li>An elephant is <span class="ans wide">bigger than</span> a cat.</li>
+          <li>A baby sheep is <span class="ans wide">smaller than</span> a mummy sheep.</li>
+          <li>The mummy cow is <span class="ans wide">bigger than</span> the baby cow.</li>
+          <li>A goose is <span class="ans wide">smaller than</span> a horse.</li>
+          <li>This cow is <span class="ans wide">bigger than</span> that cow.</li>
+          <li>This goat is <span class="ans wide">bigger than</span> the other goats.</li>
+        </ol>
+      </div>
+
+      <!-- Exercise 4 – Adjectives -->
+      <div class="exercise">
+        <h3>Exercise 4 — Adjectives <small>(10 pts)</small></h3>
+        <p class="instruction">Circle <strong>all</strong> the adjectives in each sentence.</p>
+        <ol>
+          <li>She opens her <span class="cw-ans">yellow</span> umbrella.</li>
+          <li>He eats a <span class="cw-ans">hot</span> pizza.</li>
+          <li>I drink a <span class="cw-ans">cold</span> milkshake.</li>
+          <li>They've got <span class="cw-ans">long</span> hair.</li>
+          <li>He's wearing a <span class="cw-ans">big</span> <span class="cw-ans">red</span> coat.</li>
+          <li>She's got <span class="cw-ans">curly</span> <span class="cw-ans">brown</span> hair.</li>
+          <li>It's a <span class="cw-ans">sunny</span> day.</li>
+          <li>Put on your <span class="cw-ans">warm</span> coat. It's <span class="cw-ans">cold</span> outside.</li>
+          <li>The <span class="cw-ans">little</span> baby is <span class="cw-ans">happy</span>.</li>
+          <li>She's wearing a <span class="cw-ans">green</span> and <span class="cw-ans">white</span> dress.</li>
+        </ol>
+      </div>
+
+      <!-- Exercise 5 – Mixed -->
+      <div class="exercise">
+        <h3>Exercise 5 — Mixed Grammar <small>(10 pts)</small></h3>
+
+        <p class="sub-label">a) Have got <small>(3 pts)</small></p>
+        <p class="instruction">Complete with: <em>'s got &nbsp;/&nbsp; 've got &nbsp;/&nbsp; hasn't got &nbsp;/&nbsp; haven't got</em></p>
+        <ol>
+          <li>She <span class="ans">'s got</span> brown hair.</li>
+          <li>He <span class="ans">'s got</span> a bicycle.</li>
+          <li>I <span class="ans">haven't got</span> a sister. <span class="hint">(negative)</span></li>
+        </ol>
+
+        <p class="sub-label">b) Can / Can't <small>(3 pts)</small></p>
+        <p class="instruction">Write <em>can</em> or <em>can't</em>.</p>
+        <ol>
+          <li>She <span class="ans short">can</span> ride a bike. ✓</li>
+          <li>He <span class="ans short">can't</span> swim. ✗</li>
+          <li>I <span class="ans short">can</span> play the guitar. ✓</li>
+        </ol>
+
+        <p class="sub-label">c) This / That / These / Those <small>(4 pts)</small></p>
+        <p class="instruction">Circle the correct word.</p>
+        <ol class="choice-list">
+          <li>
+            <span class="choice-ans selected">This</span>
+            <span class="choice-ans">These</span>
+            is my bag.
+          </li>
+          <li>
+            <span class="choice-ans">That</span>
+            <span class="choice-ans selected">Those</span>
+            are my books.
+          </li>
+          <li>
+            <span class="choice-ans">This</span>
+            <span class="choice-ans selected">That</span>
+            boy over there is tall.
+          </li>
+          <li>
+            <span class="choice-ans">These</span>
+            <span class="choice-ans selected">Those</span>
+            are my cousins over there.
+          </li>
+        </ol>
+      </div>
+    </div><!-- /Section A -->
+
+
+    <!-- ══════════════════════════════════════
+         SECTION B — LISTENING
+    ══════════════════════════════════════ -->
+    <div class="section section-listening">
+      <div class="section-header">
+        <span class="section-badge">Section B</span>
+        <h2>Listening</h2>
+        <span class="pts">20 points</span>
+      </div>
+
+      <div class="teacher-note">
+        <strong>👩‍🏫 Teacher:</strong>
+        Listening 1 → <strong>Class Book page 79</strong> (Unit 10, Lesson 6). &nbsp;|&nbsp;
+        Listening 2 → <strong>Class Book page 91</strong> (Unit 12, Lesson 6 — Track 131).
+        Answers below are from the book's audio script.
+      </div>
+
+      <!-- Listening 1 -->
+      <div class="exercise">
+        <h3>Listening 1 — Listen and tick (✓) the correct picture <small>(10 pts)</small></h3>
+        <p class="instruction">Listen to the weather report. Correct answers: tick (✓) the correct weather picture for each day.</p>
+        <img src="images/listening1.jpg" alt="Listening 1" class="exercise-img">
+
+        <div class="listen-tick-grid">
+          <div class="tick-day-ans">
+            <span class="day-label">1 Monday</span>
+            <span class="tick-opt-ans correct">a</span>
+            <span class="tick-opt-ans">b</span>
+          </div>
+          <div class="tick-day-ans">
+            <span class="day-label">2 Wednesday</span>
+            <span class="tick-opt-ans">a</span>
+            <span class="tick-opt-ans correct">b</span>
+          </div>
+          <div class="tick-day-ans">
+            <span class="day-label">3 Friday</span>
+            <span class="tick-opt-ans correct">a</span>
+            <span class="tick-opt-ans">b</span>
+          </div>
+          <div class="tick-day-ans">
+            <span class="day-label">4 Sunday</span>
+            <span class="tick-opt-ans">a</span>
+            <span class="tick-opt-ans correct">b</span>
+          </div>
+        </div>
+        <p style="margin-top:.7rem;font-size:.82rem;color:#888;font-style:italic;">⚠️ Verify these answers against the actual audio track before using this sheet.</p>
+      </div>
+
+      <!-- Listening 2 -->
+      <div class="exercise">
+        <h3>Listening 2 — Listen and number <small>(10 pts)</small></h3>
+        <p class="instruction">Correct order heard on Track 131.</p>
+        <img src="images/listening2.jpg" alt="Listening 2" class="exercise-img">
+
+        <div class="listen-number-grid">
+          <div class="num-item">
+            <span class="activity-label">Eating</span>
+            <div class="num-ans">3</div>
+          </div>
+          <div class="num-item">
+            <span class="activity-label">Dancing</span>
+            <div class="num-ans">1</div>
+          </div>
+          <div class="num-item">
+            <span class="activity-label">Taking photos</span>
+            <div class="num-ans">5</div>
+          </div>
+          <div class="num-item">
+            <span class="activity-label">Drinking</span>
+            <div class="num-ans">4</div>
+          </div>
+          <div class="num-item">
+            <span class="activity-label">Talking</span>
+            <div class="num-ans">2</div>
+          </div>
+        </div>
+        <p style="margin-top:.7rem;font-size:.82rem;color:#888;font-style:italic;">⚠️ Verify these answers against the actual audio track before using this sheet.</p>
+      </div>
+    </div><!-- /Section B -->
+
+
+    <!-- ══════════════════════════════════════
+         SECTION C — READING
+    ══════════════════════════════════════ -->
+    <div class="section section-reading">
+      <div class="section-header">
+        <span class="section-badge">Section C</span>
+        <h2>Reading</h2>
+        <span class="pts">30 points</span>
+      </div>
+
+      <div class="exercise">
+        <h3>Read and answer the questions <small>(30 pts)</small></h3>
+        <img src="images/reading.jpg" alt="Reading — Bella's email" class="exercise-img">
+
+        <ol class="reading-questions">
+          <li>
+            <span class="q-text">Who is Bella helping?</span>
+            <span class="q-answer">She's helping her <span class="ans">mum</span> and <span class="ans">dad</span>.</span>
+            <span class="pts-label">/ 5 pts</span>
+          </li>
+          <li>
+            <span class="q-text">What is Bella's aunt's name?</span>
+            <span class="q-answer">Her name's <span class="ans">Lola</span>.</span>
+            <span class="pts-label">/ 5 pts</span>
+          </li>
+          <li>
+            <span class="q-text">What colour is Bella's party dress?</span>
+            <span class="q-answer">It's <span class="ans short">green</span> and <span class="ans short">white</span>.</span>
+            <span class="pts-label">/ 5 pts</span>
+          </li>
+          <li>
+            <span class="q-text">What colour are the invitations?</span>
+            <span class="q-answer">They're <span class="ans short">yellow</span> with <span class="ans short">purple</span> letters.</span>
+            <span class="pts-label">/ 5 pts</span>
+          </li>
+          <li>
+            <span class="q-text">What cakes does Bella's brother like?</span>
+            <span class="q-answer">He likes the <span class="ans">little</span> cakes.</span>
+            <span class="pts-label">/ 5 pts</span>
+          </li>
+          <li>
+            <span class="q-text">What cake does Bella like?</span>
+            <span class="q-answer">She likes the big <span class="ans">chocolate</span> cake.</span>
+            <span class="pts-label">/ 5 pts</span>
+          </li>
+        </ol>
+      </div>
+    </div><!-- /Section C -->
+
+  </div><!-- /exam-wrapper -->
+
+</body>
+</html>
